@@ -1,0 +1,23 @@
+{
+  "name": "node-architecture",
+  "version": "1.0.0",
+  "description": "Basic node.js server with express",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Arnaud474@bitbucket.org/Arnaud474/node-architecture.git"
+  },
+  "keywords": [
+    "node",
+    "architecture"
+  ],
+  "author": "Arnaud Girardin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6"
+  }
+}
