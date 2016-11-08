@@ -1,3 +1,23 @@
-html
-	body
-		p Web
+include ./components/header.pug
+
+p Web
+
+div.shade0
+div.shade1
+div.shade2
+div.shade3
+div.shade4
+div.shade5
+
+
+script.
+	
+	p.definePalette('page', '0011FF', {step: 35, number: 7});
+
+	$('body>.shade0').css({'background-color': p.getPalette('page')['shade0']});
+	$('body>.shade1').css({'background-color': p.getPalette('page')['shade1']});
+	$('body>.shade2').css({'background-color': p.getPalette('page')['shade2']});
+	$('body>.shade3').css({'background-color': p.getPalette('page')['shade3']});
+	$('body>.shade4').css({'background-color': p.getPalette('page')['shade4']});
+	$('body>.shade5').css({'background-color': p.getPalette('page')['shade5']});
+	$('body>.shade6').css({'background-color': p.getPalette('page')['shade6']});
