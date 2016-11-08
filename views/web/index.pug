@@ -1,3 +1,9 @@
-html
-	body
-		p Web
+include ./components/header.pug
+
+.content
+	slideshow
+
+script.
+	riot.mount('slideshow', {});
+
+include ./components/footer.pug

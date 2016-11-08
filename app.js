@@ -34,6 +34,7 @@ Application.prototype.initRessources = function(){
 
 	//Assets
 	this.app.use('/public', express.static(__dirname + '/assets/public'));
+	this.app.use('/riot', express.static(__dirname + '/node_modules/riot'))
 }
 
 //Main init of the web application
