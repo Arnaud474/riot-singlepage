@@ -3,7 +3,8 @@ var express = require("express");
 //Application class
 var Application = function(){
 
-	var config = require("./lib/config").getEnv("dev");
+	//GETTING CONFIG WITH NODE_ENV variable
+	var config = require("./lib/config").getEnv(process.env.NODE_ENV);
 
 	//CONSTANTS
 	this.HOST = config.HOST;
@@ -31,6 +32,11 @@ Application.prototype.initRoutes = function(){
 Application.prototype.initRessources = function(){
 
 	//Node modules init
+	//----------------------------------------
+
+	//i18n - Language
+	i18nH = require('./lib/i18nHelper')(this.app);
+	i18nH.init(['en', 'fr']);
 
 	//Assets
 	this.app.use('/public', express.static(__dirname + '/assets/public'));

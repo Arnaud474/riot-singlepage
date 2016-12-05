@@ -20,8 +20,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "i18n": "^0.8.3",
     "pug": "^2.0.0-beta6",
-    "riot": "^2.6.7"
+    "riot": "^2.6.7",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
