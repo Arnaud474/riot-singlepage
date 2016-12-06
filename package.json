@@ -19,6 +19,7 @@
   "author": "Arnaud Girardin",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "i18n": "^0.8.3",
     "pug": "^2.0.0-beta6",
@@ -29,6 +30,7 @@
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-riot": "^0.1.6",
     "uglifyjs": "^2.4.10"

@@ -1,4 +1,5 @@
 var express = require("express");
+var cookieParser = require('cookie-parser');
 
 //Application class
 var Application = function(){
@@ -35,8 +36,11 @@ Application.prototype.initRessources = function(){
 	//----------------------------------------
 
 	//i18n - Language
-	i18nH = require('./lib/i18nHelper')(this.app);
-	i18nH.init(['en', 'fr']);
+	i18nH = require('./lib/i18nHelper');
+	i18nH.init(this.app, ['en', 'fr']);
+
+	//Cookie Parser
+	this.app.use(cookieParser());
 
 	//Assets
 	this.app.use('/public', express.static(__dirname + '/assets/public'));

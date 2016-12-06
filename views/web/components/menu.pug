@@ -1,17 +1,22 @@
 .menu.blue
+
 	ul
 		li 
-			a(href="/") #{__('MenuBar.Home')}
+			a(href="/" + getLocale() + "/") #{__('MenuBar.Home')}
 		li 
 			a(href="#") Page 1
 		li
 			a(href="#") Page 2
-		li.dropdown Dropdown
+		li.dropdown 
+			p Dropdown
 			ul.dd-content
-				li Super Mega Long Texte
-				li Deux
+				li 
+					a(href="#") Super Mega Long Texte
+				li
+					a(href="#") Second
 
 	//- Menu on the right side of the bar
 	ul.pull-right
-		li Right
+		li 
+			a(href="#") Right
 	div.clear
