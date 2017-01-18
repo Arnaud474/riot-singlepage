@@ -7,11 +7,11 @@ menubar
 
 		ul
 			li 
-				a(data-view="home") Home
+				a(data-view="home", data-lzr-id="menu.home")
 			li 
-				a(data-view="page1") Page 1
+				a(data-view="page1", data-lzr-id="menu.products") 
 			li
-				a(data-view="page2") Page 2
+				a(data-view="page2")
 
 			li.dropdown 
 				p Dropdown
@@ -24,16 +24,16 @@ menubar
 		//- Menu on the right side of the bar
 		ul.pull-right
 			li 
-				a() Right
+				a.locale(onclick="{changeLocale}") {locale}
 		div.clear
 
 
 
 	script.
 
-		this.on("mount", function(){
+		var self = this;
 
-			console.log("Menu Mounted");
+		this.on("mount", function(){
 
 			var items = $(".menu ul li:not(.dropdown) a");
 
@@ -45,6 +45,9 @@ menubar
 
 				});
 			}
+
+			self.locale = localizer.currentLocale().toUpperCase();
+			self.update();
 
 		})
 
@@ -62,6 +65,18 @@ menubar
 				menu.css("display","block")
 				$(".collapse-toggle").css("color", "#0844CF")
 			}
+		}
+
+		changeLocale(e){
+			localizer.setLocale();
+			localizer.getTranslation(null, function(){
+
+				self.locale = localizer.currentLocale().toUpperCase();
+				self.update();
+				localizer.localizeView("body");
+
+			});
+			
 		}
 
 

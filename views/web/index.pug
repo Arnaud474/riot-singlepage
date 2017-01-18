@@ -16,8 +16,17 @@ html
 script.
 	
 	var router = new Router();
+	var localizer = new Localizer();
 
-	riot.mount('menubar', {});
+	localizer.getTranslation(null, function(){
 
-	var currentView = riot.mount("#main", 'home', {})[0];
+		riot.mount('menubar', {});
+
+		var currentView = riot.mount("#main", 'home', {})[0];
+
+		localizer.localizeView("body");
+
+	});
+
+
 
