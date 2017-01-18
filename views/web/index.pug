@@ -1,9 +1,23 @@
-include ./components/header.pug
+html
+	head
+		include ./includes/javascript.pug
+		include ./includes/css.pug
+		title App
+		meta(name="viewport", content="width=device-width")
+	body
+		//-Inserting menubar into the page
+		menubar
 
-.content
-	slideshow
+		//-Page Content
+		#main
 
+
+			
 script.
-	riot.mount('slideshow', {});
+	
+	var router = new Router();
 
-include ./components/footer.pug
+	riot.mount('menubar', {});
+
+	var currentView = riot.mount("#main", 'home', {})[0];
+

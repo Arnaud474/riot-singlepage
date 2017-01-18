@@ -32,19 +32,12 @@ Application.prototype.initRoutes = function(){
 //Init for Modules and Assets
 Application.prototype.initRessources = function(){
 
-	//Node modules init
-	//----------------------------------------
-
-	//i18n - Language
-	i18nH = require('./lib/i18nHelper');
-	i18nH.init(this.app, ['en', 'fr']);
-
 	//Cookie Parser
 	this.app.use(cookieParser());
 
 	//Assets
 	this.app.use('/public', express.static(__dirname + '/assets/public'));
-	this.app.use('/riot', express.static(__dirname + '/node_modules/riot'))
+	this.app.use('/riot', express.static(__dirname + '/node_modules/riot'));
 }
 
 //Main init of the web application

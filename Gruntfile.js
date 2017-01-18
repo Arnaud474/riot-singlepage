@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 			    concat : true
 			},
 			dist:{
-				src: 'assets/private/riot/*.tag',
+				src: 'assets/private/riot/**/*.tag',
 				dest: 'assets/private/js/riot-compiled.js'
 			}
 		},

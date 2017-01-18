@@ -1,0 +1,110 @@
+#container{
+	position:relative;
+	display:block;
+	height: 200px;
+	width:100%;
+
+	/*CSS BG*/
+	background:
+	linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+	linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+	linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+	linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+	linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+	linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+	overflow: hidden;
+}
+
+
+.normal img.slide{
+	width:80%;
+	height:100%;
+	margin:auto;
+}
+
+.auto img.slide{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  	max-height:100%;
+  	max-width: 100%;
+  	width: auto;
+  	height: auto;
+  	margin:auto;
+}
+
+#container img.slide{
+  	display:none;
+  	pointer-events: none
+  	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#container img.visible{
+	display: inline-block;
+
+}
+
+.normal img.visible{
+	display:block !important;
+}
+
+#container .button:active{
+	color: #BBB;
+}
+
+#container .button{
+	color: white;
+	position: absolute;
+	top: 50%;
+  	transform: translateY(-50%);
+  	font-size: 2em;
+  	cursor: pointer;
+  	padding: 10px 10px 10px 10px;
+}
+
+#container .button.left{
+	left:0;
+  	margin-left:5px;
+}
+
+#container .button.right{
+	right:0;
+  	margin-right:5px;
+}
+
+#container #dots{
+	position:absolute;
+	bottom:0;
+	left:50%;
+	transform: translateX(-50%);
+	margin-bottom: 10px;
+}
+
+#container #dots i{
+	color: white;
+	padding: 0px 5px 0px 5px;
+}
+
+/*#container #dots i:active{
+	color: #BBB;
+}*/
+
+#container #dots i.current{
+	color: #BBB;
+}
+
+@media screen and (max-width: 480px)
+{
+	#container{
+		display:none;
+	}
+}
