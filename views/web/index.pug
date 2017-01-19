@@ -5,24 +5,28 @@ html
 		title App
 		meta(name="viewport", content="width=device-width")
 	body
+
+		//-Banner here
+		
+
 		//-Inserting menubar into the page
 		menubar
 
 		//-Page Content
 		#main
-
-
 			
 script.
 	
+	var cookieParser = new CookieParser();
 	var router = new Router();
 	var localizer = new Localizer();
+	var currentView;
 
 	localizer.getTranslation(null, function(){
 
 		riot.mount('menubar', {});
 
-		var currentView = riot.mount("#main", 'home', {})[0];
+		router.init();
 
 		localizer.localizeView("body");
 

@@ -11,7 +11,7 @@ menubar
 			li 
 				a(data-view="page1", data-lzr-id="menu.products") 
 			li
-				a(data-view="page2")
+				a(data-view="page2" data-lzr-id="menu.about")
 
 			li.dropdown 
 				p Dropdown
@@ -51,6 +51,7 @@ menubar
 
 		})
 
+		
 		openMenu(e){
 
 			var menu = $(".menu>ul");

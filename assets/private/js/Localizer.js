@@ -4,16 +4,19 @@ function Localizer(){
 	this.locales = ['fr','en'];
 }
 
+/**
+*	Defaults to next Locale if no locale is specified
+*/
 Localizer.prototype.setLocale = function(locale){
 
 	//Most Likely should be server sided, or atleast gather languages from server on init
-	var index = this.locales.indexOf(getCookies().locale);
+	var index = this.locales.indexOf(cookieParser.getCookies().locale);
 
 	var next = (index == this.locales.length-1) ? 0 : (index + 1);
 
 	locale = this.locales[next];
 
-	setCookie("locale", locale);
+	cookieParser.setCookie("locale", locale);
 }
 
 
@@ -29,11 +32,11 @@ Localizer.prototype.getTranslation = function(locale, callback){
 	//Get locale from param or cookie or defaults to en
 	if(locale)
 		locale = locale;
-	else if( getCookies() && getCookies().locale)
+	else if( cookieParser.getCookies() && cookieParser.getCookies().locale)
 		locale = this.currentLocale()
 	else
 	{
-		setCookie("locale", "en")
+		cookieParser.setCookie("locale", "en")
 		locale = "en";
 	}
 
@@ -80,6 +83,9 @@ Localizer.prototype.localizeNode = function(domNode){
 	}
 }
 
+/**
+*	Finds word in the json, Ex : menu.home will check property home of menu object menu{ home : "Home"}
+*/
 Localizer.prototype.findWord = function(string, obj){
 
 	var arr = string.split(".");
@@ -97,38 +103,11 @@ Localizer.prototype.findWord = function(string, obj){
 		return obj[string];
 }
 
+/*
+*	Returns current locale set inside cookie
+*/
 Localizer.prototype.currentLocale = function(){
-	return getCookies().locale;
+	return cookieParser.getCookies().locale;
 }
 
 
-function getCookies(){
-
-		var cookieString = document.cookie;
-
-		if(cookieString.length == 0)
-			return false;
-
-		var cookieArray = cookieString.split(";");
-
-		var cookieObj = {};
-
-		for(var i = 0; i < cookieArray.length; i++)
-		{
-
-			var temp = cookieArray[i].split("=");
-			var string = temp[0].replace(/\s+/g, "")
-
-			cookieObj[string] = temp[1];
-		}
-
-		//console.log(cookieObj)
-
-		return cookieObj;
-	}
-
-function setCookie(cookieName, value){
-
-	document.cookie = cookieName + "=" + value + ";";
-			
-}

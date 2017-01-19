@@ -5,6 +5,4 @@ var api = require("../controllers/api")
 
 router.get('/api/localizer/:locale', api.localizer);
 
-
-
 module.exports = router;

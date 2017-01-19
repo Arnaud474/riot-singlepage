@@ -1,6 +1,7 @@
 {
 	"menu": {
 		"home" : "Home",
-		"products": "Products"
+		"products": "Products",
+		"about"	  : "About"
 	}
 }
