@@ -6,6 +6,7 @@ Single page App example with Riot + Nodejs
   * Basic Routing
   * Basic Assets Setup (Images, CSS, JS, Tag (Riot))
   * Route for Localization
+  * Rendering engine for HTML and tag files is Pug
 
 * A setup of Riotjs files
  * Multiple views
