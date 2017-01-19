@@ -15,9 +15,11 @@ Single page App example with Riot + Nodejs
  
  * Basic Localization and View persistance (Cookies)
  
- ## This repository includes
+## Instructions to run project
  To run the example simply run :
  * npm install
  * npm start (Will run grunt tasks aka CSS & JS concatenation and minify + Riot compilation of tag files)
+ * Open browser and enter localhost:8888
+ 
  
 
